@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог о веб-разработке</title>
+  <meta name="description" content="Современные статьи по HTML, CSS и JavaScript">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">
+        <img src="assets/icons/logo.svg" alt="Логотип блога" class="logo" width="120" height="40">
+      </a>
+
+      <nav class="header__nav nav js-nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--active">Статьи</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__button button">Подписаться</button>
+
+      <button class="header__burger burger js-burger" aria-expanded="false" aria-label="Открыть меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="main">
+    <!-- Секция с фильтрами -->
+    <section class="section filters">
+      <h1 class="section__title">Последние статьи</h1>
+      <div class="filters__tags">
+        <button class="tag tag--active">Все</button>
+        <button class="tag">HTML</button>
+        <button class="tag">CSS</button>
+        <button class="tag">JavaScript</button>
+        <button class="tag">React</button>
+      </div>
+    </section>
+
+    <!-- Сетка статей -->
+    <section class="section articles">
+      <div class="articles__grid">
+        <!-- Карточка 1 -->
+        <article class="article-card">
+          <img src="assets/images/article-1.jpg" alt="Адаптивный дизайн" class="article-card__image" width="400" height="200">
+          <div class="article-card__content">
+            <span class="article-card__tag">CSS</span>
+            <h2 class="article-card__title">Адаптивный дизайн в 2024</h2>
+            <p class="article-card__excerpt">Новые подходы к созданию резиновых макетов с помощью CSS Grid.</p>
+            <a href="#" class="article-card__link">Читать →</a>
+          </div>
+        </article>
+
+        <!-- Карточка 2 -->
+        <article class="article-card">
+          <img src="assets/images/article-2.jpg" alt="JavaScript анимации" class="article-card__image" width="400" height="200">
+          <div class="article-card__content">
+            <span class="article-card__tag">JavaScript</span>
+            <h2 class="article-card__title">Анимации на vanilla JS</h2>
+            <p class="article-card__excerpt">Как создать плавные переходы без библиотек.</p>
+            <a href="#" class="article-card__link">Читать →</a>
+          </div>
+        </article>
+
+        <!-- Карточка 3 -->
+        <article class="article-card">
+          <img src="assets/images/article-3.jpg" alt="HTML семантика" class="article-card__image" width="400" height="200">
+          <div class="article-card__content">
+            <span class="article-card__tag">HTML</span>
+            <h2 class="article-card__title">Семантика в HTML5</h2>
+            <p class="article-card__excerpt">Правильное использование тегов для доступности и SEO.</p>
+            <a href="#" class="article-card__link">Читать →</a>
+          </div>
+        </article>
+
+        <!-- Карточка 4 -->
+        <article class="article-card">
+          <img src="assets/images/article-4.jpg" alt="React хуки" class="article-card__image" width="400" height="200">
+          <div class="article-card__content">
+            <span class="article-card__tag">React</span>
+            <h2 class="article-card__title">Хуки в React 18</h2>
+            <p class="article-card__excerpt">Полное руководство по useMemo и useCallback.</p>
+            <a href="#" class="article-card__link">Читать →</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Кнопка загрузки -->
+      <button class="articles__button button">Показать ещё</button>
+    </section>
+  </main>
+
+<footer class="footer">
+  <!-- Верхняя часть футера -->
+  <div class="footer__top">
+    <!-- Блок навигации -->
+    <div class="footer__nav-block">
+      <h3 class="footer__title">Навигация</h3>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item"><a href="#" class="footer__nav-link">Главная</a></li>
+          <li class="footer__nav-item"><a href="#" class="footer__nav-link">Статьи</a></li>
+          <li class="footer__nav-item"><a href="#" class="footer__nav-link">О нас</a></li>
+          <li class="footer__nav-item"><a href="#" class="footer__nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Блок подписки -->
+    <div class="footer__subscribe">
+      <h3 class="footer__title">Подписаться на рассылку</h3>
+      <form class="subscribe-form">
+        <input type="email" class="subscribe-form__input" placeholder="Ваш email" required>
+        <button type="submit" class="subscribe-form__button button">Подписаться</button>
+      </form>
+      <p class="footer__privacy">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a>.</p>
+    </div>
+
+    <!-- Контакты -->
+    <div class="footer__contacts">
+      <h3 class="footer__title">Контакты</h3>
+
+      <address itemscope itemtype="http://schema.org/Organization">
+        <p itemprop="address">г. Москва, ул. Примерная, 123</p>
+        <p><a href="mailto:info@example.com" itemprop="email">info@example.com</a></p>
+        <p><a href="tel:+79991234567" itemprop="telephone">+7 (999) 123-45-67</a></p>
+      </address>
+    </div>
+  </div>
+
+  <!-- Нижняя часть футера (копирайт) -->
+  <div class="footer__bottom">
+    <div class="footer__copyright">© 2024 Блог о веб-разработке. Все права защищены.</div>
+    <div class="footer__legal">
+      <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+      <a href="#" class="footer__legal-link">Условия использования</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Подключение JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
