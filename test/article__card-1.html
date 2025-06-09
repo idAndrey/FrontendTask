@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новые подходы к созданию резиновых макетов с помощью CSS Grid | Блог о веб-разработке</title>
+  <meta name="description" content="Современные техники создания адаптивных макетов с использованием CSS Grid Layout">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <style>
+    /* Локальные стили для примеров кода */
+    .code-example {
+      background: #f5f7fa;
+      border-radius: 6px;
+      padding: 20px;
+      margin: 20px 0;
+      overflow-x: auto;
+    }
+    .code-example__caption {
+      font-style: italic;
+      color: #666;
+      margin-bottom: 10px;
+    }
+    pre {
+      margin: 0;
+    }
+    code {
+      font-family: 'Courier New', monospace;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка (уже готова из предыдущих этапов) -->
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="header__logo">
+        <img src="assets/icons/logo.svg" alt="Логотип блога" class="logo" width="120" height="40">
+      </a>
+
+      <nav class="header__nav nav js-nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--active">Статьи</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+        </ul>
+      </nav>
+
+      <button class="header__button button">Подписаться</button>
+
+      <button class="header__burger burger js-burger" aria-expanded="false" aria-label="Открыть меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Основное содержимое статьи -->
+  <main class="main article-page">
+    <!-- Хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="Навигационная цепочка">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">Главная</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">Статьи</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <span class="breadcrumbs__current">CSS Grid</span>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="article-page__container">
+      <!-- Основной контент статьи -->
+      <article class="article-content">
+        <header class="article-content__header">
+          <span class="article-content__tag">CSS</span>
+          <h1 class="article-content__title">Новые подходы к созданию резиновых макетов с помощью CSS Grid</h1>
+          <div class="article-content__meta">
+            <time datetime="2024-06-10" class="article-content__date">10 июня 2024</time>
+            <span class="article-content__author">Автор: Анна Смирнова</span>
+            <span class="article-content__reading-time">Время чтения: 8 мин</span>
+          </div>
+        </header>
+
+        <!-- Изображение статьи -->
+        <figure class="article-content__image">
+          <img src="assets/images/css-grid-layout.jpg" alt="Пример макета на CSS Grid" class="article-content__img" loading="lazy">
+          <figcaption class="article-content__caption">Современный адаптивный макет, созданный с помощью CSS Grid</figcaption>
+        </figure>
+
+        <!-- Текст статьи -->
+        <div class="article-content__text">
+          <section class="article-section">
+            <h2 class="article-section__title">Введение в CSS Grid</h2>
+            <p>CSS Grid Layout — это мощная система для создания двумерных макетов, которая радикально изменила подход к вёрстке. В отличие от Flexbox, который работает в одном измерении, Grid позволяет точно контролировать и строки, и столбцы одновременно.</p>
+            
+            <div class="code-example">
+              <div class="code-example__caption">Базовый пример Grid-контейнера:</div>
+              <pre><code class="language-css">.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="article-section">
+            <h2 class="article-section__title">Резиновые макеты с auto-fit и minmax()</h2>
+            <p>Ключевая особенность современных Grid-макетов — использование функции <code>minmax()</code> в сочетании с <code>auto-fit</code>. Это позволяет создавать по-настоящему гибкие сетки, которые адаптируются без медиазапросов.</p>
+            
+            <div class="code-example">
+              <div class="code-example__caption">Адаптивная сетка товаров:</div>
+              <pre><code class="language-css">.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}</code></pre>
+            </div>
+          </section>
+
+          <section class="article-section">
+            <h2 class="article-section__title">Практический пример: карточный макет</h2>
+            <p>Рассмотрим создание адаптивной сетки карточек, которая меняет количество колонок в зависимости от доступного пространства.</p>
+            
+            <div class="interactive-demo">
+              <div class="demo-grid">
+                <div class="demo-card">Карточка 1</div>
+                <div class="demo-card">Карточка 2</div>
+                <div class="demo-card">Карточка 3</div>
+                <div class="demo-card">Карточка 4</div>
+              </div>
+            </div>
+
+            <p>Такой подход особенно полезен для блогов, галерей и интернет-магазинов.</p>
+          </section>
+
+          <section class="article-section">
+            <h2 class="article-section__title">Именованные области</h2>
+            <p>Grid позволяет создавать сложные макеты с именованными областями, что делает код более читаемым и поддерживаемым.</p>
+            
+            <div class="code-example">
+              <div class="code-example__caption">Макет страницы с именованными областями:</div>
+              <pre><code class="language-css">.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+  grid-template-columns: 250px 1fr;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer { grid-area: footer; }</code></pre>
+            </div>
+          </section>
+        </div>
+
+        <!-- Социальные кнопки -->
+        <footer class="article-content__footer">
+          <div class="article-share">
+            <span class="article-share__title">Поделиться:</span>
+            <a href="#" class="article-share__link" aria-label="Поделиться в Twitter">
+              <img src="assets/icons/twitter.svg" alt="Twitter" width="24">
+            </a>
+            <a href="#" class="article-share__link" aria-label="Поделиться в Facebook">
+              <img src="assets/icons/facebook.svg" alt="Facebook" width="24">
+            </a>
+            <a href="#" class="article-share__link" aria-label="Поделиться в LinkedIn">
+              <img src="assets/icons/linkedin.svg" alt="LinkedIn" width="24">
+            </a>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Боковой блок -->
+      <aside class="article-sidebar">
+        <!-- Об авторе -->
+        <section class="sidebar-block">
+          <h3 class="sidebar-block__title">Об авторе</h3>
+          <div class="author-card">
+            <img src="assets/images/author-anna.jpg" alt="Анна Смирнова" class="author-card__image" loading="lazy">
+            <p class="author-card__bio">Фронтенд-разработчик с 7-летним опытом. Специализируется на CSS-методологиях и доступности веб-интерфейсов. Ведущий эксперт по современным техникам вёрстки.</p>
+          </div>
+        </section>
+
+        <!-- Содержание статьи -->
+        <section class="sidebar-block">
+          <h3 class="sidebar-block__title">Содержание</h3>
+          <nav class="sidebar-toc">
+            <ul class="sidebar-toc__list">
+              <li class="sidebar-toc__item">
+                <a href="#intro" class="sidebar-toc__link">Введение в CSS Grid</a>
+              </li>
+              <li class="sidebar-toc__item">
+                <a href="#fluid" class="sidebar-toc__link">Резиновые макеты</a>
+              </li>
+              <li class="sidebar-toc__item">
+                <a href="#example" class="sidebar-toc__link">Практический пример</a>
+              </li>
+              <li class="sidebar-toc__item">
+                <a href="#areas" class="sidebar-toc__link">Именованные области</a>
+              </li>
+            </ul>
+          </nav>
+        </section>
+
+        <!-- Популярные статьи -->
+        <section class="sidebar-block">
+          <h3 class="sidebar-block__title">Читайте также</h3>
+          <div class="sidebar-articles">
+            <article class="sidebar-article">
+              <a href="#" class="sidebar-article__link">
+                <h4 class="sidebar-article__title">Flexbox: полное руководство</h4>
+                <time datetime="2024-05-28" class="sidebar-article__date">28 мая 2024</time>
+              </a>
+            </article>
+            <article class="sidebar-article">
+              <a href="#" class="sidebar-article__link">
+                <h4 class="sidebar-article__title">CSS-переменные в реальных проектах</h4>
+                <time datetime="2024-06-02" class="sidebar-article__date">2 июня 2024</time>
+              </a>
+            </article>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Подвал (уже готов из предыдущих этапов) -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copyright">© 2024 Блог о веб-разработке. Все права защищены.</p>
+      <nav class="footer__legal">
+        <a href="#" class="footer__legal-link">Политика конфиденциальности</a>
+        <a href="#" class="footer__legal-link">Условия использования</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Подключение JavaScript -->
+  <script src="js/script.js"></script>
+  
+  <!-- Скрипт для демонстрации (опционально) -->
+  <script>
+    // Анимация демо-сетки
+    document.addEventListener('DOMContentLoaded', () => {
+      const demoGrid = document.querySelector('.demo-grid');
+      if (demoGrid) {
+        let cols = 4;
+        setInterval(() => {
+          cols = cols === 1 ? 4 : cols - 1;
+          demoGrid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+        }, 2000);
+      }
+    });
+  </script>
+</body>
+</html>
