@@ -1,0 +1,146 @@
+.header {
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Логотип */
+.header__logo {
+  width: 120px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+/* Навигация */
+.nav__list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav__link:hover {
+  color: #ff5722;
+  cursor: pointer;
+}
+
+.nav__link--active {
+  color: #ff5722;
+  border-bottom: 2px solid #ff5722;
+}
+
+/* Кнопка */
+.button {
+  padding: 10px 20px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #e64a19;
+  cursor: pointer;
+}
+
+/* Бургер-кнопка (скрыта на десктопе) */
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.burger__line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  /* Скрываем навигацию и кнопку, показываем бургер */
+  .nav, .header__button {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  /* Меню при открытии (будет работать с JS) */
+  .nav--mobile {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.button:focus, .nav__link:focus {
+  outline: 2px solid #ff5722;
+  outline-offset: 2px;
+}
+
+/* Состояние меню при открытии */
+.nav--mobile {
+  display: block !important; /* Переопределяем display:none */
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* Анимация бургера */
+.burger--active .burger__line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger--active .burger__line:nth-child(2) {
+  opacity: 0;
+}
+.burger--active .burger__line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.burger__line {
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+

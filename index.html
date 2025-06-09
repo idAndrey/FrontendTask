@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Блог - Главная</title>
+  <meta name="description" content="Современный блог о веб-разработке и дизайне">
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Favicon (замените на свой) -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="header">
+    <div class="header__container">
+      <!-- Логотип -->
+      <a href="/" class="header__logo">
+        <img src="assets/icons/logo.svg" alt="Логотип блога" class="logo" width="120" height="40">
+      </a>
+
+      <!-- Основная навигация -->
+      <nav class="header__nav nav js-nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Главная</a></li>
+          <li class="nav__item"><a href="#" class="nav__link nav__link--active">Статьи</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Кнопка подписки -->
+      <button class="header__button button">Подписаться</button>
+
+      <!-- Бургер-кнопка для мобильных -->
+      <button class="header__burger burger js-burger" aria-expanded="false" aria-label="Открыть меню">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="main">
+    <section class="hero">
+      <h1 class="hero__title">Последние статьи о фронтенде</h1>
+      <p class="hero__text">Актуальные материалы по HTML, CSS и JavaScript</p>
+    </section>
+
+    <!-- Пример статьи -->
+    <article class="article">
+      <h2 class="article__title">Как создать адаптивное меню</h2>
+      <p class="article__excerpt">Пошаговое руководство по реализации бургер-меню на чистом CSS и JavaScript.</p>
+      <a href="#" class="article__link">Читать далее</a>
+    </article>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="footer">
+    <div class="footer__container">
+      <p class="footer__copyright">© 2023 Блог о веб-разработке</p>
+      <ul class="footer__social social">
+        <li class="social__item">
+          <a href="#" class="social__link" aria-label="Twitter">
+            <img src="assets/icons/twitter.svg" alt="Twitter" width="24" height="24">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#" class="social__link" aria-label="GitHub">
+            <img src="assets/icons/github.svg" alt="GitHub" width="24" height="24">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Подключение JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
